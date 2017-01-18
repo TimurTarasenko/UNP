@@ -1,0 +1,8 @@
+<div class="center">
+<%= datagrid_form_for @grid, :method => :get, :url => use_phone_systems_path %>
+</div>
+<div class="center">
+<%= paginate(@grid.assets) %>
+<%= datagrid_table @grid %>
+<%= paginate(@grid.assets) %>
+</div>

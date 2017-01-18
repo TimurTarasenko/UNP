@@ -1,0 +1,2 @@
+class UsePhoneSystem < ApplicationRecord
+end
