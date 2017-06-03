@@ -6,7 +6,7 @@ class UsePhoneSystemsGrid
     UsePhoneSystem
   end
 
-  filter(:day_id, :date, :range => true)
+  filter(:day_id, :date, :range => true, :default => proc { [28.month.ago.to_date, Date.today]} )
   filter(:country, :string)
   filter(:interfaces, :string)
 
@@ -23,4 +23,3 @@ class UsePhoneSystemsGrid
 
 
 end
-
