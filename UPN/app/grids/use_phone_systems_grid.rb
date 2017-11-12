@@ -7,8 +7,12 @@ class UsePhoneSystemsGrid
   end
 
   filter(:day_id, :date, :range => true, :default => proc { [28.month.ago.to_date, Date.today]} )
-  filter(:country, :string)
-  filter(:interfaces, :string)
+  #filter(:country, :string)
+  filter(:country, :enum, :select => proc { UsePhoneSystem.all.map {|c|  [c.country] }.uniq})
+  #filter(:interfaces, :string)
+  filter(:interfaces, :enum, :select => proc { UsePhoneSystem.all.map {|c|  [c.interfaces] }.uniq})
+  #filter(:status, :string)
+  filter(:status, :enum, :select => proc { UsePhoneSystem.all.map {|c|  [c.status] }.uniq})
 
   column(:day_id) do |record|
     record.day_id.to_date
