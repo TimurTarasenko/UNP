@@ -6,13 +6,13 @@ class UsePhoneSystemsGrid
     UsePhoneSystem
   end
 
-  filter(:day_id, :date, :range => true, :default => proc { [28.month.ago.to_date, Date.today]} )
+  filter(:day_id, :date, :range => true, :default => proc { [28.month.ago.to_date, Date.today] })
   #filter(:country, :string)
-  filter(:country, :enum, :select => proc { UsePhoneSystem.all.map {|c|  [c.country] }.uniq})
+  filter(:country, :enum, :select => proc { UsePhoneSystem.all.map { |c| [c.country] }.uniq })
   #filter(:interfaces, :string)
-  filter(:interfaces, :enum, :select => proc { UsePhoneSystem.all.map {|c|  [c.interfaces] }.uniq})
+  filter(:interfaces, :enum, :select => proc { UsePhoneSystem.all.map { |c| [c.interfaces] }.uniq })
   #filter(:status, :string)
-  filter(:status, :enum, :select => proc { UsePhoneSystem.all.map {|c|  [c.status] }.uniq})
+  filter(:status, :enum, :select => proc { UsePhoneSystem.all.map { |c| [c.status] }.uniq })
 
   column(:day_id) do |record|
     record.day_id.to_date
@@ -24,6 +24,5 @@ class UsePhoneSystemsGrid
   column(:duration_call)
   column(:costs)
   column(:status)
-
-
+  column(:customer_type)
 end
