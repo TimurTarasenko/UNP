@@ -9,6 +9,7 @@ class CreateUsePhoneSystems < ActiveRecord::Migration[5.0]
       t.integer :duration_call
       t.integer :costs
       t.string :status
+      t.string :customer_type
     end
   end
 end
